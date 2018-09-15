@@ -6,7 +6,8 @@ $(document).ready(function() {
   // TODO: save to a local file
   // TODO: put data to html
   $("#header").html(getHeader());
-  $("#content").html(getContent());
+  getContent().then(content => $("#content").html(content));
+  $("#footer").html(getFooter());
   // TODO: set interval for all steps above
 });
 

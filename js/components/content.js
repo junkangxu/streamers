@@ -1,24 +1,25 @@
 function getContent() {
-  return getContentData().map(item => createCard());
+  return getContentData().then(data => {
+    return data.map(item => {
+      return createCard(item);
+    });
+  });
 }
 
 function getContentData() {
-  return ["Saab", "Volvo", "BMW"];
+  var roomIds = ["74960", "9999"];
+  return getFromDouyu(roomIds);
 }
 
-function createCard() {
-  var roomId = '123';
-  var roomName = 'testRoomName';
-  var streamerName = 'testStreamerName';
-  var viewer = '10K';  
+function createCard(item) {
   return `<div class="card">
             <div class="container">
               <p>
-                <b>${roomName}</b>
+                <b>${item.roomName}</b>
               </p>
               <p class="streamerName">
-                ${streamerName}
-                <span class="viewer">${viewer}</span>
+                ${item.streamerName}
+                <span class="viewer">${item.viewer}</span>
               </p>
             </div>
           </div>`;

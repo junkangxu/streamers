@@ -16,6 +16,19 @@ p {
 
 #content {
   padding-top: 10px;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+#footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 8pt;
+  font-style: italic;
+  color: rgb(169, 169, 169);
 }
 
 .card {
