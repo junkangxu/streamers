@@ -7,7 +7,7 @@ function getContent() {
 }
 
 function getContentData() {
-  var roomIds = ["74960", "9999"];
+  var roomIds = ["60937","74960", "9999"];
   return getFromDouyu(roomIds);
 }
 

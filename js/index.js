@@ -1,14 +1,8 @@
 var $ = require('jQuery');
 window.$ = $;
 
-$(document).ready(function() { 
-  // TODO: API calls
-  // TODO: save to a local file
-  // TODO: put data to html
-  $("#header").html(getHeader());
-  getContent().then(content => $("#content").html(content));
-  $("#footer").html(getFooter());
-  // TODO: set interval for all steps above
+$(document).ready(function() {
+  startApp();
 });
 
 getData = () => {
@@ -19,11 +13,10 @@ getData = () => {
 };
 
 setupInterface = () => {
-  // TODO: setup header
-  // TODO: setup content
-  // TODO: setup footer
+  // $("#header").html(getHeader());
+  getContent().then(content => $("#content").html(content));
 };
 
-startApp = () => {};
+startApp = () => setupInterface();
 
-// TODO: set interval
+setInterval(setupInterface, 60000);
